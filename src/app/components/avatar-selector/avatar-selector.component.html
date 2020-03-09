@@ -1,0 +1,19 @@
+<ion-col text-center>
+    <ion-col size="6">
+        <ion-button expand="full" shape="round" (click)="libreria()">
+            <ion-icon slot="start" name="images"></ion-icon>
+            Galería
+        </ion-button>
+    </ion-col>
+    <h3 align="center">Seleccione Avatar</h3>
+</ion-col>
+
+<ion-row>
+    <ion-col>
+        <ion-slides [options]="avatarSlide">
+            <ion-slide *ngFor="let avatar of avatars">
+                <ion-img class="pick-avatar" src="/assets/avatars/{{ avatar.img }}" [ngClass]="{ 'pick-avatar-seleccionado': avatar.seleccionado }" (click)="seleccionarAvatar( avatar )"></ion-img>
+            </ion-slide>
+        </ion-slides>
+    </ion-col>
+</ion-row>
